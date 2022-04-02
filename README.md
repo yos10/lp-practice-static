@@ -9,7 +9,7 @@
 https://github.com/yos10/lp-practice-static/projects/1
 
 # サイトのURL
-http://yos10.s223.xrea.com/
+https://yos10.shop/
 
 # 必要な情報
 「XREA.COM NEW SIGNUP」というメールに書かれています。
@@ -64,7 +64,9 @@ https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-cont
 1. ターミナルを表示します。`Ctrl` + `j` でターミナルの表示/非表示ができます。
 
 1. ファイルを同期するコマンドを実行します  
-    `sh deploy.sh`
+    ```
+    sh deploy.sh
+    ```
 
 1. コンテナを終了するには、vscode の左下の `><` をクリックし、`Reopen Folder Locally` をクリックします。
 
