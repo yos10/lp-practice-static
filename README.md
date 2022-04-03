@@ -32,27 +32,27 @@ sh deploy.sh
 
 # Windows 11 でコンテナ内で rsync コマンドを使う
 
-参考  
+参考にしたページ  
 https://code.visualstudio.com/docs/remote/containers#_sharing-git-credentials-with-your-container
 
 vscode に Remote - Containers 拡張機能をインストール  
 https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers
 
-1. `ssh-keygen` で `id_rsa_github` というファイル名でキーを作ります
+1. `ssh-keygen` で `id_rsa_github` というファイル名でキーを作ります。
 
-1. powershell を管理者として実行し、以下のコマンドを入力します
+1. powershell を管理者として実行し、以下のコマンドを入力して ssh-agent をスタートします。
     ```
     Set-Service ssh-agent -StartupType Automatic
     Start-Service ssh-agent
     Get-Service ssh-agent
     ```
 
-1. SSH キーをエージェントに登録します
+1. キーを ssh-agent に登録します。
     ```
     ssh-add $HOME/.ssh/id_rsa_github
     ```
 
-1. 登録されたか確認します
+1. 登録されたか確認します。
     ```
     ssh-add -L
     ```
@@ -61,13 +61,18 @@ https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-cont
 
 1. vscode server のインストールと、コンテナが起動するまでしばらく待ちます。
 
-1. ターミナルを表示します。`Ctrl` + `j` でターミナルの表示/非表示ができます。
+1. vscode のターミナルを表示します。`Ctrl` + `j` でターミナルの表示/非表示ができます。
 
-1. ファイルを同期するコマンドを実行します  
+1. グローバル IP を許可してから SSH 接続するには、以下のコマンドを実行します。
+    ```
+    ssh [ユーザ名]@[サーバのアドレス]
+    ```
+
+1. ファイルを同期するには、以下のコマンドを実行します。
     ```
     sh deploy.sh
     ```
 
 1. コンテナを終了するには、vscode の左下の `><` をクリックし、`Reopen Folder Locally` をクリックします。
 
-1. コンテナを削除するには、画面左の`リモートエクスプローラー`をクリックし、CONTAINERS の下の Dev Containers にカーソルを合わせて `x` をクリックします。
+1. コンテナを削除するには、画面左の`リモートエクスプローラー`アイコンをクリックし、CONTAINERS の下の Dev Containers にカーソルを合わせて `x` をクリックします。
