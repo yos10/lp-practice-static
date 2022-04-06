@@ -1,0 +1,11 @@
+version: '3'
+services:
+  app:
+    build: .
+    tty: true
+    volumes:
+      - .:/linux-study
+      # コマンド入力履歴をボリュームに保存
+      - commandhistory:/commandhistory
+volumes:
+  commandhistory:
