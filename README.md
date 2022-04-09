@@ -78,3 +78,25 @@ https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-cont
 1. コンテナを終了するには、vscode の左下の `><` をクリックし、`Reopen Folder Locally` をクリックします。
 
 1. コンテナを削除するには、画面左の`リモートエクスプローラー`アイコンをクリックし、CONTAINERS の下の Dev Containers にカーソルを合わせて `x` をクリックします。
+
+# ssh-agent の設定を元に戻すには
+
+1. ssh-agent に登録したキーを削除するには、以下のコマンドを実行します。
+    ```
+    ssh-agent -D
+    ```
+
+1. 削除されたか確認します。
+    ```
+    ssh-add -L
+    ```
+
+1. ssh-agent を停止するには、powershell を管理者として実行し、以下のコマンドを入力します。
+    ```
+    Stop-Service ssh-agent
+    ```
+
+1. ssh-agent のスタートアップの種類を無効にするには、powershell を管理者として実行し、以下のコマンドを入力します。
+    ```
+    Set-Service ssh-agent -StartupType Disabled
+    ```
