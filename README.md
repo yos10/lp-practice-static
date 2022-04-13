@@ -57,7 +57,7 @@ https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-cont
     ssh-add -L
     ```
 
-1. [devcontainer 用のファイル](https://github.com/yos10/lp-practice-static/commit/968d48fb6ebfd7c5b2ae1c44932bf3f9bc66377e)を追加します。
+1. [devcontainer 用のファイル](https://github.com/yos10/lp-practice-static/commit/b93cfe82f082feb30fd709d1e7d5399d9a0abb22)を追加します。
 
 1. vscode の左下の `><` をクリックし、`Reopen in Container` をクリックします。
 
